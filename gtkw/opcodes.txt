@@ -1,0 +1,12 @@
+// SAP1 extended opcodes
+0 NOP
+1 LDA
+2 ADD
+3 SUB
+4 STA
+5 LDI
+6 JMP
+7 JC
+8 JZ
+e OUT
+f HLT

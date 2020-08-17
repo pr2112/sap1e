@@ -1,0 +1,22 @@
+// --------------------------------------------------------------------------
+// RAM File for Ben Eater 8 bit computer Divide Program
+// Performs basic division as long as there are no remainders.
+// Code pulled from a post by Charbel Tannous from
+// "https://eater.net/8bit/control".
+// --------------------------------------------------------------------------
+1D     // 00:   LDA 13
+2C     // 01:   ADD 12
+4D     // 02:   STA 13
+1F     // 03:   LDA 15
+3E     // 04:   SUB 14
+4F     // 05:   STA 15
+88     // 06:   JZ 8
+60     // 07:   JMP 0
+1D     // 08:   LDA 13
+E0     // 09:   OUT
+F0     // 10:   HLT
+00     // 11:
+01     // 12:   "ADD BY"
+00     // 13:   "RESULT"
+04     // 14:   "Small Number"
+08     // 15:   "Big Number"
