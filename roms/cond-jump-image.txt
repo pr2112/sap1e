@@ -1,8 +1,11 @@
 // --------------------------------------------------------------------------
-// RAM File for Ben Eater 8 bit computer
-// Exercises conditional jumps
+// ** RAM File for Ben Eater 8 bit computer **
+//
+// cond-jump-image.txt
+//
+// This code exercises the conditional jump instuctions JC (jump on carry)
+// and JZ (jump on zero)
 // --------------------------------------------------------------------------
-
 
 E0    // 00:   OUT
 2F    // 01:   ADD 15

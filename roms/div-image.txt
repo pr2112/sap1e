@@ -1,9 +1,13 @@
 // --------------------------------------------------------------------------
-// RAM File for Ben Eater 8 bit computer Divide Program
-// Performs basic division as long as there are no remainders.
-// Code pulled from a post by Charbel Tannous from
+// ** RAM File for Ben Eater 8 bit computer **
+//
+// div-image.txt
+//
+// Performs basic division as long as there are no remainders.  This code was
+// pulled from a post by Charbel Tannous from
 // "https://eater.net/8bit/control".
 // --------------------------------------------------------------------------
+
 1D     // 00:   LDA 13
 2C     // 01:   ADD 12
 4D     // 02:   STA 13

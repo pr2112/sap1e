@@ -1,8 +1,12 @@
 // --------------------------------------------------------------------------
-// RAM File for Ben Eater 8 bit computer
-//   Tests the CPU halt function
+// ** RAM File for Ben Eater 8 bit computer **
+//
+// hlt-image.txt
+//
+// Tests the CPU halt function
 //
 // --------------------------------------------------------------------------
+
 53    // 00:   LDI 3
 4F    // 01:   STA 15
 56    // 02:   LDI 6

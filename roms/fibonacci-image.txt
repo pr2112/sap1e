@@ -1,7 +1,12 @@
 // --------------------------------------------------------------------------
-// RAM File for Ben Eater 8 bit computer
-// Fibonacci program
+// ** RAM File for Ben Eater 8 bit computer **
+//
+// fibonacci-image.txt
+//
+// Computes Fibonacci numbers and outputs the result to the CPU
+// output.
 // --------------------------------------------------------------------------
+
 51    // 00:   LDI 1
 4E    // 01:   STA 14
 50    // 02:   LDI 0
