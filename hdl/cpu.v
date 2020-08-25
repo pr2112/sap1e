@@ -2,9 +2,9 @@
 // Implements the SAP-1 Ben Eater 8 bit CPU in Verilog
 //------------------------------------------------------------
 module cpu(
-           input            clk,
-           input            reset,
-           output [7:0]     out);
+           input        clk,
+           input        reset,
+           output [7:0] out);
    
    // Microcode control signals
    reg hlt;  // Halt
@@ -37,11 +37,11 @@ module cpu(
    wire [7:0] ram_data;
    wire [7:0] alu_data;
    wire [7:0] flags_data;
-
+   
    // ALU result indicators used to feed the flags register
    wire       carry_ind;
    wire       zero_ind;
-
+   
    // CPU logic for halt
    reg        halted;
    always @(posedge clk)
@@ -57,9 +57,9 @@ module cpu(
    assign opcode = ireg_data[7:4];
    
    // Create microcode clock 180 deg out of phase with system clock
-   wire uclk;
+   wire       uclk;
    assign uclk = !clk;
-
+   
    ram #(.DATA_WIDTH(8), .ADDR_WIDTH(4)) ram
      (
       .clock(clk),
@@ -67,8 +67,8 @@ module cpu(
       .addr(mar_data),
       .data_in_en(ri),
       .data_out(ram_data)
-     );
-
+      );
+   
    alu alu1
      (
       .data_1(rega_data),
@@ -96,7 +96,7 @@ module cpu(
       .incr_en(ce),
       .data_in(bus[3:0]),
       .data_out(pc_data)
-     );
+      );
    
    cpu_register regA
      (
@@ -191,22 +191,22 @@ module cpu(
    // Form address to access into the microcode ROM
    wire [8:0] ucaddr;
    assign ucaddr = {flags_data[1:0], ireg_data[7:4], step_data};
-
+   
    // Microcode data word
    wire [15:0] ucdat;
-    
+   
    ucode ucode(.address(ucaddr), 
                .data(ucdat));
-
+   
    // Set control signals from microcode rom data
    always @ (posedge uclk) 
      begin
         if (reset)
-	      {hlt, mi, ri, ro, io, ii, ai, ao, eo, su, bi, oi, ce, co, j, fi} <= 16'd0;
+          {hlt, mi, ri, ro, io, ii, ai, ao, eo, su, bi, oi, ce, co, j, fi} <= 16'd0;
         else          
-	      {hlt, mi, ri, ro, io, ii, ai, ao, eo, su, bi, oi, ce, co, j, fi} <= ucdat[15:0];
+          {hlt, mi, ri, ro, io, ii, ai, ao, eo, su, bi, oi, ce, co, j, fi} <= ucdat[15:0];
      end 
    
    assign out = oreg_data;
-
+   
 endmodule

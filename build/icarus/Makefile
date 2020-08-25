@@ -16,7 +16,7 @@ all:
 
 run:
 	$(VVP) a.out
-	
+
 clean:
 	@rm -rf a.out
 	@rm -rf *.vcd
